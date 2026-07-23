@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 0.6875rem;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <section class="content-side">
+        <header class="logo">
+          <img src="images/logo.svg" alt="The Logo Base Apparel" />
+        </header>
+        <picture>
+          <source
+            media="(max-width: 768px)"
+            srcset="images/hero-mobile.jpg"
+            src="images/hero-mobile.jpg"
+            alt="The picture of the Woman"
+          />
+          <img src="" alt="" />
+        </picture>
+        <article class="hero-text">
+          <span>We're</span>
+          <h1>
+            Coming <br />
+            Soon
+          </h1>
+          <p class="hero-description">
+            Hello fellow shoppers! We're currently building our new fashion
+            store. Add your email below to stay up-to-date with announcements
+            and our launch deals.
+          </p>
+
+          <div class="input-email">
+            <form action="" method="post" class="form" novalidate>
+              <label for="email"></label>
+
+              <div class="input-group">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email Address"
+                  required
+                />
+
+                <button type="submit" class="icon" aria-label="Envoyer">
+                  <img
+                    src="images/icon-arrow.svg"
+                    alt="Arrow"
+                    class="icon-arrow"
+                  />
+                </button>
+
+                <img
+                  src="images/icon-error.svg"
+                  alt="Erreur"
+                  class="icon-error"
+                  hidden
+                />
+              </div>
+
+              <p class="message-error" hidden>Please provide a valid email.</p>
+            </form>
+          </div>
+        </article>
+      </section>
+      <section class="hero-desktp">
+        <picture>
+          <source
+            media="(min-width: 768px)"
+            srcset="images/hero-desktop.jpg"
+            src="images/hero-desktop.jpg"
+            alt="The picture of the Woman"
+          />
+          <img src="" alt="" />
+        </picture>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
