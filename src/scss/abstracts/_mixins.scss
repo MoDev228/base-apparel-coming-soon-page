@@ -1,0 +1,26 @@
+@use "../abstracts/variables" as *;
+@mixin style($ff, $color) {
+  font-family: $ff;
+  line-height: 1.2;
+  color: $color;
+}
+
+@mixin bg {
+
+  background-size: cover;
+}
+
+@mixin flex($dir: row, $jc: center, $ai: center) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin padding($top, $rigth, $bottom, $left) {
+  padding: $top $rigth $bottom $left;
+}
+
+@mixin margin($top, $rigth, $bottom, $left) {
+  margin: $top $rigth $bottom $left;
+}
