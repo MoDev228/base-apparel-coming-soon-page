@@ -7,6 +7,7 @@ export default defineConfig({
       '@': resolve(__dirname, 'src'),
     },
   },
+  base: "/base-apparel-coming-soon-page/",
 
   css: {
     preprocessorOptions: {
