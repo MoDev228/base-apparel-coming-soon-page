@@ -1,0 +1,221 @@
+@use "sass:list";
+@use "../abstracts" as *;
+
+body {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  @include flex;
+  @include style($ff, #000);
+  font-size: list.nth($sizes, 2);
+  background-color: $linear-1 cover;
+}
+
+.container {
+  width: 100%;
+  max-width: 768px;
+  @include margin(0, auto, 0, auto);
+  @include flex(column);
+}
+
+.content-side {
+  width: 100%;
+}
+
+.logo {
+  width: 100%;
+  @include padding(3rem, 4rem, 3rem, 4rem);
+
+  @media (min-width: 768px) {
+    padding: 0;
+    margin-bottom: 7rem;
+  }
+}
+.logo img {
+  display: block;
+  width: 150px;
+  object-fit: cover;
+}
+.content-side > picture img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.hero-text {
+  @include flex(column);
+  @include margin(5rem, 0, 2rem, 0);
+  line-height: 1;
+}
+
+.hero-text span {
+  font-size: clamp(3.5rem, 8vw + 1rem, 5rem);
+  text-transform: uppercase;
+  letter-spacing: 14px;
+  font-weight: 300;
+  color: $pink;
+}
+
+.hero-text h1 {
+  font-size: clamp(3.5rem, 8vw + 1rem, 5rem);
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 14px;
+  margin: 0 0 2rem 0;
+
+  @media (min-width: 768px) {
+    text-align: start;
+  }
+}
+
+.hero-description {
+  text-align: center;
+  @include padding(0, 2rem, 0, 2rem);
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: $pink;
+  margin: 0 0 2rem 0;
+
+  @media (min-width: 768px) {
+    padding: 0 3rem 0 0;
+    text-align: start;
+  }
+}
+
+.input-email {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  width: 100%;
+  max-width: min(300px, calc(100% - 8rem));
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    max-width: 100%;
+  }
+}
+
+.error {
+  border: 2px solid hsl(0, 93%, 68%);
+}
+
+.input-group {
+  position: relative;
+}
+
+input[type="email"] {
+  width: 100%;
+  height: 60px;
+  border-radius: 9999px;
+  @include padding(2rem, 2rem, 2rem, 2rem);
+  border-width: 1px;
+  border-color: $pink;
+
+  transition: border 0.3s ease;
+
+  &:hover {
+    border-color: hsl(0, 36%, 50%);
+  }
+
+  &:focus {
+    border-color: hsl(0, 93%, 68%); /* Exemple : couleur plus vive/rose */
+    box-shadow: 0 0 0 2px rgba(249, 142, 142, 0.2); /* Ajoute un léger halo lumineux autour */
+  }
+}
+
+input[type="email"]::placeholder {
+  color: $pink;
+  font-size: 1.5rem;
+}
+
+.icon {
+  position: absolute;
+  background: $linear-2;
+  top: -50%;
+  right: 0;
+  width: 80px;
+  height: 100%;
+
+  border: none;
+
+  object-fit: scale-down;
+
+  transform: translate(10px, 50%);
+
+  transition:
+    background 0.3s ease,
+    opacity 0.3s ease;
+
+  border-radius: 50px;
+  cursor: pointer;
+
+  &:hover {
+    background: $linear-2-hover;
+  }
+}
+
+.icon-error {
+  position: absolute;
+  background: transparent;
+  right: 75px;
+  top: 50%;
+  height: 15px;
+  transform: translateY(-50%);
+}
+
+.message-error {
+  position: absolute;
+  color: $red;
+  font-weight: 400;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  body {
+    background: url(/public/images/bg-pattern-desktop.svg) no-repeat center
+      center fixed;
+    background-size: cover;
+    background-image: $linear-1, url(/public/images/bg-pattern-desktop.svg);
+  }
+
+  .container {
+    max-width: 100%;
+    height: 100%;
+    @include flex;
+    gap: 40px;
+  }
+
+  .content-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50%;
+    padding-left: 150px;
+    flex-shrink: 1;
+  }
+
+  .hero-text {
+    @include flex(column, center, start);
+  }
+
+  .hero-desktp {
+    display: flex;
+    justify-content: right;
+    flex: 1;
+  }
+
+  .hero-desktp picture img {
+    display: block;
+    max-width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+}
